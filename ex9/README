@@ -22,6 +22,8 @@ SnakeGame.jack
 
 Remarks
 -------
+In this project, we implemented a Snake game using the JACK high level programming language.
+
 Explanation on how we implemented this game:
 
 First of all, we implemented a two-way linked list that represents the snake's body,
@@ -32,9 +34,11 @@ After game execution, a welcome screen with the game instructions is shown.
 User can choose a wanted game speed and then press enter/space in order to start the game,
 or press escape in order to quit.
 
-We also decided to implement a food-poop system, which make the snake poop after he ate some amount of food.
+We also decided to implement a food-poop system, which make the snake poop after he ate some amount of food and after some 
+set time.
 Note: eating your own poop will reduce your score by 3,
 while eating a nand-gate (the food) will add 1 point to your score.
+In both cases the snake grows.
 
 Snake is not allowed to collide (or go through) screen borders, or collide with itself.
 In that case, current round is over and the user is transferred to a new windows with his score
