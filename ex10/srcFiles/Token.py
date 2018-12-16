@@ -1,7 +1,7 @@
 # ============== Imports ==============
 
 from TokenTypes import *
-# from .TokenTypes import *
+
 # ============= Constants =============
 
 IDENTIFIER_XML_P = "<identifier>"
