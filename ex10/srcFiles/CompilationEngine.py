@@ -1,11 +1,5 @@
 # ============== Imports ==============
 
-# from srcFiles.TokenTypes import Type as TTT
-# from srcFiles.TokenTypes import Keyword as TTK
-# from srcFiles.TokenTypes import Symbol as TTS
-# from srcFiles.TokenTypes import keyword_dict as key_dict
-# from srcFiles.TokenTypes import symbols_dict as sym_dict
-
 from TokenTypes import Type as TTT
 from TokenTypes import Keyword as TTK
 from TokenTypes import Symbol as TTS
