@@ -26,7 +26,10 @@ the tokenization result into an XML file.
 In the next project this will output VM translated code instead of the XML.
 We worked according to the course suggested API, and built the project as future-proof as we can.
 
-Historically Tcl has always stored all intermediate results as strings.
-(With 8.0 they're rethinking that.  Of course, Perl rethought that from
-the start.)
-                -- Larry Wall in <199710071721.KAA19014@wall.org> (quote from school terminal)
+The way this works:
+For each JACK file (we assume the JACK files are of valid syntax):
+  Tokenize the file using the Tokenizer class (a Token is a string which has meaning in the Jack language) using regex and
+  text analysis.
+  Cause the CompilationEngine to use the Tokenizer in order to interpret the syntax of the JACK code, by
+  analyzing each token aquired from the Tokenizer.
+  Output everything into an XML file which represents the compiled version of the input JACK file.
