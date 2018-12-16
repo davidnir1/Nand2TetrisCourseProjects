@@ -17,4 +17,5 @@ Assembler - The executable for this project
 
 Remarks
 -------
-* The chip was actually implemented by simply using an Or chip. cool!
+In this project, we created a program which translates Assembly code into Machine language, according to the
+HACK platform specification.
