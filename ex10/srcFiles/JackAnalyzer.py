@@ -3,8 +3,6 @@
 import sys
 import os.path
 from pathlib import Path
-# from srcFiles.JackTokenizer import JackTokenizer
-# from srcFiles.CompilationEngine import CompilationEngine
 from JackTokenizer import JackTokenizer
 from CompilationEngine import CompilationEngine
 # ============= Constants =============
