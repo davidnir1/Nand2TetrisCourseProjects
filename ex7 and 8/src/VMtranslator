@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Assumes the main class in the program is called main.
+
+java main $*

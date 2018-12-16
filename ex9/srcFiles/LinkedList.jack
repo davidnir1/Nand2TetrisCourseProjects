@@ -1,0 +1,120 @@
+/** This class implements a two-way liked list
+    Each node holds a pointer to the next node the former node,
+    and the list holds a pointer to the last node in order to remove it in O(1) complexity */
+class LinkedList {
+
+    field Node head;  // Current list's head
+    field Node tail;  // Current last node
+    field int numOfNodes;  // Number of current nodes in the list
+
+    /** Construct a new LinkedList object with a given (x,y) coordinate */
+    constructor LinkedList new(int x, int y) {
+        do addFirstNode(Node.new(x, y));
+        return this;
+    }
+
+    /** deAlloc all nodes in list and reset fields to null and zero */
+    method void reset(int x, int y) {
+        var Node current, temp;
+        let current = head;
+        while(~(current = null)) {
+            let temp = current;
+            let current = current.getNext();
+            do deAllocNode(temp);
+        }
+        let head = null;
+        let tail = null;
+        let numOfNodes = 0;
+        do addFirstNode(Node.new(x, y));
+        return;
+    }
+
+    /** This method assumes the current list is empty and adds a given node to the list */
+    method void addFirstNode(Node node) {
+        let head = node;
+        let tail = node;
+        let numOfNodes = 1;
+        return;
+    }
+
+    /** This method receives a node and add it as the new list head */
+    method void add(Node newHead) {
+        if(head = null) { // If list is empty
+            do addFirstNode(newHead);
+            return;
+        }
+        do newHead.setNext(head);
+        do head.setFormer(newHead);
+        let head = newHead;
+        let numOfNodes = numOfNodes + 1;
+        if(numOfNodes = 2) {
+            let tail = newHead.getNext();
+        }
+        return;
+    }
+
+    /** This method removes the last node in the list */
+    method void removeTail() {
+        var Node newTail,oldTail;
+        let oldTail = tail;
+        if(numOfNodes = 0) {
+            return;
+        }
+        if(numOfNodes = 1) {
+            let head = null;
+            let tail = null;
+            let numOfNodes = 0;
+            do deAllocNode(oldTail);
+            return;
+        }
+        if(numOfNodes = 2) {
+            do addFirstNode(head);
+            do head.setNext(null);
+            do head.setFormer(null);
+            do deAllocNode(oldTail);
+            return;
+        }
+        let newTail = tail.getFormer();
+        do newTail.setNext(null);
+		do deAllocNode(oldTail);
+        let tail = newTail;
+        let numOfNodes = numOfNodes - 1;
+        return;
+    }
+
+    /** This method deAlloc a given node */
+    method void deAllocNode(Node node) {
+        do node.setNext(null);
+        do node.setFormer(null);
+        do Memory.deAlloc(node);
+        return;
+    }
+
+    /** This method returns the current first node in the list */
+    method Node getHead() {
+        return head;
+    }
+
+    /** This method returns the current last node in the list */
+    method Node getTail() {
+        return tail;
+    }
+
+    /** This method returns list's length (number of nodes) */
+    method int getLength() {
+        return numOfNodes;
+    }
+
+    /** This method returns true if a given (x,y) coordinate exists in the current list, false otherwise */
+    method boolean exists(int x, int y) {
+        var Node temp;
+        let temp = head;
+        while(~(temp = null)) {
+            if(temp.isEqual(x,y)) {
+                return true;
+            }
+            let temp = temp.getNext();
+        }
+        return false;
+    }
+}

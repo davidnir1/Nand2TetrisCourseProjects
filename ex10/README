@@ -1,0 +1,32 @@
+idan356, davidnir1
+===============================================================================
+Idan Gabay, ID 312415706, idan.gabay@mail.huji.ac.il
+David Nir, ID 203487293, david.nir1@mail.huji.ac.il
+===============================================================================
+
+                           Project 10 - Compiler
+                           -----------------------
+
+
+Submitted Files
+---------------
+README - This file.
+JackAnalyzer
+Makefile
+CompilationEngine.py
+JackAnalyzer.py
+JackTokenizer.py
+Token.py
+TokenTypes.py
+
+Remarks
+-------
+In this project, we built the first part of the JACK compiler - it tokenizes the given JACK code and outputs 
+the tokenization result into an XML file.
+In the next project this will output VM translated code instead of the XML.
+We worked according to the course suggested API, and built the project as future-proof as we can.
+
+Historically Tcl has always stored all intermediate results as strings.
+(With 8.0 they're rethinking that.  Of course, Perl rethought that from
+the start.)
+                -- Larry Wall in <199710071721.KAA19014@wall.org> (quote from school terminal)

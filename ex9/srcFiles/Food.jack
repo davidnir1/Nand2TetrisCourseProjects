@@ -1,0 +1,101 @@
+/**
+	This class represents a single food elemnt on the game's map, it can be either tasty food or nasty poop.
+	The objects have their own coordinates, they know about the snake (so they could verify that they don't spawn on it).
+	Each object has it's own limit on existence on the map, it's implemented by a counter which is decremented each round until it reaches zero.
+	It will respawn when the counter reaches zero by a command from the map (since there are other things to consider).
+	The food objects will start blinking when they reach a certain count on the counter, to indicate that they are about to disappear.
+*/
+
+class Food{
+
+	field int xCoord; // food's current x coordinate
+	field int yCoord; // food's current y coordinate
+	field Snake snake; // food's reference to the game's snake object
+	field int remainingLife; // this will be a counter which will be responsible for making food not stay forever
+	field boolean foodType; // true for food, false for poop
+	field boolean color; // true for white, false for black
+	
+	/**
+		Constructor for the food object, receives the food's type, coordinates and a reference to the game's snake object.
+	*/
+	constructor Food new(boolean type, int x, int y, Snake newSnake){
+		// default debug coords
+		let snake = newSnake;
+		let xCoord = x;
+		let yCoord = y;
+		let foodType = type;
+		do respawn(x, y);
+		return this;
+	
+	}
+
+	// #################################### Getter methods ############################################################
+	
+	method boolean getColor(){
+		return color;
+	}
+
+	method boolean getType(){
+		return foodType;
+	}
+	
+	method int getLife(){
+		return remainingLife;
+	}
+
+	method int getX(){
+		return xCoord;
+	}
+	
+	method int getY(){
+		return yCoord;
+	}
+	
+	// ################################### Other Methods ################################################################
+	
+	/**
+		Do the food's part in this turn:
+			Decrement the remaining life counter
+			Handle the blinking part
+			Return an indication upon the food's death
+		Returns true if the food died, or false otherwise.
+	*/
+	method boolean doFoodStuff(){
+		let remainingLife = remainingLife - 1; // decrement the counter
+		if (remainingLife < 1){ // return true if the food died
+			return true;
+		}
+		if (remainingLife < 10){ // do one blink to indicate the low number of remaining life
+			let color = ~color;
+		}
+		return false; // the food is still alive, so return false
+	}
+	
+	/**
+		Respawns the food in the given coordinates.
+		It makes sure that the last coordinates the object held are cleared (unless the snake is there, to avoid deleting parts of it).
+		It also resets the color indicator and resets the counters based on the food's type.
+	*/
+	method void respawn(int x, int y){
+		if(~(snake.isTouching(xCoord,yCoord))){ // clear last coordinates
+			do Drawer.clearCell(xCoord,yCoord);
+		}
+		let color = true; // true is food
+		if (foodType){ // food
+			let remainingLife = 40; 
+			while(snake.isTouching(x,y)){ // find coords not taken by the snake
+				let x = Drawer.generateRandomX(x+1);
+				let y = Drawer.generateRandomY(y+1);
+			}
+		}
+		else{ // this food is poop
+			let remainingLife = 100; // some default value, same as before
+		}
+		let xCoord = x;
+		let yCoord = y;
+		return;
+	}
+	
+
+
+} // end of Food class

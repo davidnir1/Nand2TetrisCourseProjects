@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc5238ca-6f94-4e20-afd0-3c4db1a4fda8" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-475587211">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="JAVA/" value="1" />
+          <entry key="Makefile" value="5" />
+          <entry key="README" value="4" />
+          <entry key="VMTranslator" value="2" />
+          <entry key="VMtranslator" value="1" />
+          <entry key="andCode" value="2" />
+          <entry key="asm" value="108" />
+          <entry key="cmp" value="4" />
+          <entry key="eqCode" value="3" />
+          <entry key="gtCode" value="1" />
+          <entry key="java" value="86" />
+          <entry key="ltCode" value="5" />
+          <entry key="negCode" value="4" />
+          <entry key="notCode" value="2" />
+          <entry key="orCode" value="2" />
+          <entry key="popCode" value="3" />
+          <entry key="pushCode" value="5" />
+          <entry key="stackInit" value="1" />
+          <entry key="subCode" value="1" />
+          <entry key="testFile" value="7" />
+          <entry key="tst" value="3" />
+          <entry key="txt" value="3" />
+          <entry key="useful notes" value="2" />
+          <entry key="vm" value="90" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="86" />
+          <entry key="PLAIN_TEXT" value="168" />
+          <entry key="UML" value="1" />
+          <entry key="VTL" value="90" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Makefile" value="643" />
+          <entry key="README" value="1863" />
+          <entry key="VMTranslator" value="1" />
+          <entry key="VMtranslator" value="55" />
+          <entry key="andCode" value="49" />
+          <entry key="asm" value="2374" />
+          <entry key="dummy" value="22" />
+          <entry key="java" value="23913" />
+          <entry key="negCode" value="164" />
+          <entry key="notCode" value="52" />
+          <entry key="orCode" value="27" />
+          <entry key="popCode" value="24" />
+          <entry key="pushCode" value="61" />
+          <entry key="stackInit" value="2" />
+          <entry key="testFile" value="582" />
+          <entry key="txt" value="1760" />
+          <entry key="useful notes" value="1624" />
+          <entry key="vm" value="1051" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="23913" />
+          <entry key="PLAIN_TEXT" value="9298" />
+          <entry key="UNKNOWN" value="5" />
+          <entry key="VTL" value="1051" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FlowControlCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1380">
+              <caret line="92" column="16" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
+              <folding>
+                <element signature="e#2672#2673#0" expanded="true" />
+                <element signature="e#2714#2715#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ArithmeticBooleanCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1005">
+              <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Parser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="139" column="42" selection-start-line="139" selection-start-column="42" selection-end-line="139" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>VmCommands</find>
+      <find>static</find>
+      <find>pop</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/baseAssemblyCode/testingZone/lt.asm" />
+        <option value="$PROJECT_DIR$/MemoryAccess/BasicTest/BasicTest.asm" />
+        <option value="$PROJECT_DIR$/testVM/add.vm" />
+        <option value="$PROJECT_DIR$/testVM/sub.vm" />
+        <option value="$PROJECT_DIR$/testVM/or.vm" />
+        <option value="$PROJECT_DIR$/testVM/not.vm" />
+        <option value="$PROJECT_DIR$/testVM/neg.vm" />
+        <option value="$PROJECT_DIR$/testVM/lt.vm" />
+        <option value="$PROJECT_DIR$/testVM/gt.vm" />
+        <option value="$PROJECT_DIR$/testVM/eq.vm" />
+        <option value="$PROJECT_DIR$/testVM/and.vm" />
+        <option value="$PROJECT_DIR$/baseAssemblyCode/testingZone/baseRam.asm" />
+        <option value="$PROJECT_DIR$/baseAssemblyCode/testingZone/add.asm" />
+        <option value="$PROJECT_DIR$/baseAssemblyCode/testingZone/and.asm" />
+        <option value="$PROJECT_DIR$/baseAssemblyCode/testingZone/neg.asm" />
+        <option value="$PROJECT_DIR$/baseAssemblyCode/testingZone/not.asm" />
+        <option value="$PROJECT_DIR$/baseAssemblyCode/testingZone/or.asm" />
+        <option value="$PROJECT_DIR$/baseAssemblyCode/testingZone/sub.asm" />
+        <option value="$PROJECT_DIR$/testVM/baseRam.asm" />
+        <option value="$PROJECT_DIR$/baseAssemblyCode/pushCode" />
+        <option value="$PROJECT_DIR$/testVM/push.asm" />
+        <option value="$PROJECT_DIR$/testVM/pop.asm" />
+        <option value="$PROJECT_DIR$/testVM/push.vm" />
+        <option value="$PROJECT_DIR$/testVM/pop.vm" />
+        <option value="$PROJECT_DIR$/StackArithmetic/StackTest/StackTest.vm" />
+        <option value="$PROJECT_DIR$/src/VMTranslator" />
+        <option value="$PROJECT_DIR$/src/VMtranslator" />
+        <option value="$PROJECT_DIR$/testVM/lt.asm" />
+        <option value="$PROJECT_DIR$/StackArithmetic/StackTest/StackTest.asm" />
+        <option value="$PROJECT_DIR$/testersFromWhatsapp/OverflowTest/GT2/GT2.vm" />
+        <option value="$PROJECT_DIR$/testVM/lt1.asm" />
+        <option value="$PROJECT_DIR$/src/README" />
+        <option value="$PROJECT_DIR$/src/useful notes" />
+        <option value="$PROJECT_DIR$/src/FlowControlCommand.java" />
+        <option value="$PROJECT_DIR$/testFiles/newTestFile.asm" />
+        <option value="$PROJECT_DIR$/src/VmCommand.java" />
+        <option value="$PROJECT_DIR$/src/ArithmeticBooleanCommand.java" />
+        <option value="$PROJECT_DIR$/testFiles/testFile.asm" />
+        <option value="$PROJECT_DIR$/testFiles/testFile" />
+        <option value="$PROJECT_DIR$/testFiles/functionDeclare.vm" />
+        <option value="$PROJECT_DIR$/testFiles/functionCall.vm" />
+        <option value="$PROJECT_DIR$/testFiles/functionDeclare.asm" />
+        <option value="$PROJECT_DIR$/testFiles/setRam.asm" />
+        <option value="$PROJECT_DIR$/testFiles/testFile.vm" />
+        <option value="$PROJECT_DIR$/8/FunctionCalls/StaticsTest/StaticsTest.asm" />
+        <option value="$PROJECT_DIR$/src/MemoryAccessCommand.java" />
+        <option value="$PROJECT_DIR$/src/VmInit.java" />
+        <option value="$PROJECT_DIR$/src/FunctionCommand.java" />
+        <option value="$PROJECT_DIR$/src/Parser.java" />
+        <option value="$PROJECT_DIR$/src/VmToAssemblyFileWriter.java" />
+        <option value="$PROJECT_DIR$/src/Makefile" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2141" />
+    <option name="width" value="1400" />
+    <option name="height" value="988" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="8" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="8" type="462c0819:PsiDirectoryNode" />
+              <item name="FunctionCalls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="8" type="462c0819:PsiDirectoryNode" />
+              <item name="FunctionCalls" type="462c0819:PsiDirectoryNode" />
+              <item name="FibonacciElement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="8" type="462c0819:PsiDirectoryNode" />
+              <item name="FunctionCalls" type="462c0819:PsiDirectoryNode" />
+              <item name="NestedCall" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="8" type="462c0819:PsiDirectoryNode" />
+              <item name="FunctionCalls" type="462c0819:PsiDirectoryNode" />
+              <item name="SimpleFunction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="8" type="462c0819:PsiDirectoryNode" />
+              <item name="FunctionCalls" type="462c0819:PsiDirectoryNode" />
+              <item name="StaticsTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="8" type="462c0819:PsiDirectoryNode" />
+              <item name="ProgramFlow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="8" type="462c0819:PsiDirectoryNode" />
+              <item name="ProgramFlow" type="462c0819:PsiDirectoryNode" />
+              <item name="BasicLoop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="8" type="462c0819:PsiDirectoryNode" />
+              <item name="ProgramFlow" type="462c0819:PsiDirectoryNode" />
+              <item name="FibonacciSeries" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="baseAssemblyCode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="testersFromWhatsapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ex7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ex7" type="462c0819:PsiDirectoryNode" />
+              <item name="testFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/david/Nand/ex7/src/VmToAssemblyFileWriter.java" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543242539041" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/baseAssemblyCode" />
+      <recent name="$PROJECT_DIR$/.idea/garbage" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="ex7" />
+      <option name="PROGRAM_PARAMETERS" value="MemoryAccess/BasicTest MemoryAccess/PointerTest MemoryAccess/StaticTest testFiles/testFile.vm StackArithmetic/SimpleAdd StackArithmetic/StackTest testVM/add.vm testVM/and.vm testVM/eq.vm testVM/gt.vm testVM/lt.vm testVM/neg.vm testVM/not.vm testVM/or.vm testVM/pop.vm testVM/push.vm testVM/sub.vm testersFromWhatsapp/OverflowTest/GT1/GT1.vm testersFromWhatsapp/OverflowTest/GT2/GT2.vm testersFromWhatsapp/OverflowTest/LT1/LT1.vm testersFromWhatsapp/OverflowTest/LT2/LT2.vm testersFromWhatsapp/OverflowTest/EQ2/EQ2.vm testersFromWhatsapp/OverflowTest/EQ1/EQ1.vm testersFromWhatsapp/OverflowTest/AllTogether 8/ProgramFlow/FibonacciSeries/FibonacciSeries.vm 8/ProgramFlow/BasicLoop/BasicLoop.vm testFiles/functionCall.vm testFiles/functionDeclare.vm $PROJECT_DIR$/8/FunctionCalls/StaticsTest $PROJECT_DIR$/8/FunctionCalls/FibonacciElement $PROJECT_DIR$/8/FunctionCalls/StaticsTest/StaticsTest.tst $PROJECT_DIR$/8/FunctionCalls/NestedCall" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc5238ca-6f94-4e20-afd0-3c4db1a4fda8" name="Default Changelist" comment="" />
+      <created>1542357492508</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542357492508</updated>
+      <workItem from="1542357495530" duration="77254000" />
+      <workItem from="1543237760974" duration="4811000" />
+      <workItem from="1543242691273" duration="1112000" />
+      <workItem from="1544477110104" duration="8000" />
+    </task>
+    <task id="LOCAL-00001" summary="Created a project environment where we can work.&#10;ALLAHU AKBAR">
+      <created>1542357967907</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542357967908</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created basic hierarchy and started work on the Parser">
+      <created>1542361726469</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542361726469</updated>
+    </task>
+    <task id="LOCAL-00003" summary="The parser can now read a file and hold it's lines in an array list">
+      <created>1542363704826</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1542363704826</updated>
+    </task>
+    <task id="LOCAL-00004" summary="The parser can now read a file and hold it's lines in an array list&#10;Also removed the annoying '\r' from all the files">
+      <created>1542364923307</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542364923307</updated>
+    </task>
+    <task id="LOCAL-00005" summary="The parser is complete, it returns a string list.&#10;Created two subclasses for the VM command&#10;renamed AssemblyCommand into AssemblyBlock">
+      <created>1542365882147</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542365882147</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed trimming issue, Started work on constructors of VM command">
+      <created>1542367165122</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542367165122</updated>
+    </task>
+    <task id="LOCAL-00007" summary="expanded constructor on  mem VM commands, added exception class">
+      <created>1542368373919</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1542368373919</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added notes in readme">
+      <created>1542369429786</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1542369429786</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added two testers from whatsapp group">
+      <created>1542372969485</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1542372969485</updated>
+    </task>
+    <task id="LOCAL-00010" summary="quicksave before starting work on push pop translation">
+      <created>1542381460202</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1542381460202</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added some stuff">
+      <created>1542382535346</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1542382535346</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changed all indentation to tabs&#10;fixed something with vmCommand for push">
+      <created>1542385181922</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1542385181922</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Push translation looks better now....">
+      <created>1542388498619</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1542388498619</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fixed push, now it works, also added another folder">
+      <created>1542496603596</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1542496603596</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Push translation is now on point">
+      <created>1542497101081</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1542497101081</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed pop's code and translation">
+      <created>1542497700649</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1542497700649</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Fixed a bunch of asm stuff">
+      <created>1542498949206</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1542498949206</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fixed a bunch of asm stuff">
+      <created>1542499055287</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1542499055287</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fixed a bunch of asm stuff">
+      <created>1542499245011</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1542499245011</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Fixed a bunch of asm stuff">
+      <created>1542500835473</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1542500835473</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Fixed a bunch of asm stuff">
+      <created>1542502215161</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1542502215161</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixed a bunch of asm stuff">
+      <created>1542502714052</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1542502714052</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fixed typo in pop">
+      <created>1542505912984</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1542505912984</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fixed pop">
+      <created>1542506135671</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1542506135671</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fixed pop">
+      <created>1542506170810</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1542506170810</updated>
+    </task>
+    <task id="LOCAL-00026" summary="built a testing environment base code">
+      <created>1542537604087</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1542537604087</updated>
+    </task>
+    <task id="LOCAL-00027" summary="built a testing environment base code">
+      <created>1542538034574</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1542538034574</updated>
+    </task>
+    <task id="LOCAL-00028" summary="fixed minor issue with translation of push and pop">
+      <created>1542541721386</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1542541721386</updated>
+    </task>
+    <task id="LOCAL-00029" summary="push pop are complete">
+      <created>1542543227723</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1542543227723</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Built a makefile and executable, also added new readme and notes in it">
+      <created>1542548626876</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1542548626876</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Built a makefile and executable, also added new readme and notes in it">
+      <created>1542555916175</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1542555916175</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Added a syntax check to push and pop">
+      <created>1542556625667</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1542556625667</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Flow control seems to work for now">
+      <created>1542922523879</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1542922523879</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Added some documentation">
+      <created>1542924937973</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1542924937973</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Added class for function commands&#10;added documentation&#10;added support for new class in parser&#10;added notes in useful notes">
+      <created>1542930221704</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1542930221704</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Added class for function commands&#10;added documentation&#10;added support for new class in parser&#10;added notes in useful notes">
+      <created>1542930499808</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1542930499808</updated>
+    </task>
+    <task id="LOCAL-00037" summary="function commands now update a string which keeps the name of the latest function the parser read">
+      <created>1542979696556</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1542979696556</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Added declaration code translation">
+      <created>1542982318170</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1542982318170</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Added declaration code translation">
+      <created>1542982693878</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1542982693878</updated>
+    </task>
+    <task id="LOCAL-00040" summary="finished function call translation">
+      <created>1542988000660</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1542988000660</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Treated push and pop codes">
+      <created>1543240762593</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1543240762593</updated>
+    </task>
+    <task id="LOCAL-00042" summary="passing all tests now">
+      <created>1543241398147</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1543241398147</updated>
+    </task>
+    <task id="LOCAL-00043" summary="passing all tests now">
+      <created>1543241784190</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1543241784190</updated>
+    </task>
+    <task id="LOCAL-00044" summary="last version before submit">
+      <created>1543242412898</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1543242412898</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="83185000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1920" y="-2" width="1920" height="1017" extended-state="6" />
+    <layout>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18676628" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.49839914" weight="0.0800451" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.21184632" side_tool="true" weight="0.16234498" />
+      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.7881537" weight="0.18263811" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.3990981" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32919955" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18036287" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.49839914" weight="0.0800451" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.21184632" side_tool="true" weight="0.16234498" />
+      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.7881537" visible="true" weight="0.18263811" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.3990981" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32919955" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.asm" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added two testers from whatsapp group" />
+    <MESSAGE value="quicksave before starting work on push pop translation" />
+    <MESSAGE value="Added some stuff" />
+    <MESSAGE value="Changed all indentation to tabs&#10;fixed something with vmCommand for push" />
+    <MESSAGE value="Push translation looks better now...." />
+    <MESSAGE value="Fixed push, now it works, also added another folder" />
+    <MESSAGE value="Push translation is now on point" />
+    <MESSAGE value="Fixed pop's code and translation" />
+    <MESSAGE value="Fixed a bunch of asm stuff" />
+    <MESSAGE value="fixed typo in pop" />
+    <MESSAGE value="fixed pop" />
+    <MESSAGE value="built a testing environment base code" />
+    <MESSAGE value="fixed minor issue with translation of push and pop" />
+    <MESSAGE value="push pop are complete" />
+    <MESSAGE value="Built a makefile and executable, also added new readme and notes in it" />
+    <MESSAGE value="Added a syntax check to push and pop" />
+    <MESSAGE value="Flow control seems to work for now" />
+    <MESSAGE value="Added some documentation" />
+    <MESSAGE value="Added class for function commands&#10;added documentation&#10;added support for new class in parser&#10;added notes in useful notes" />
+    <MESSAGE value="function commands now update a string which keeps the name of the latest function the parser read" />
+    <MESSAGE value="Added declaration code translation" />
+    <MESSAGE value="finished function call translation" />
+    <MESSAGE value="Treated push and pop codes" />
+    <MESSAGE value="passing all tests now" />
+    <MESSAGE value="last version before submit" />
+    <option name="LAST_COMMIT_MESSAGE" value="last version before submit" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/testersFromWhatsapp/Nand-7-Tests/README.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testersFromWhatsapp/OverflowTest/GT2/GT2.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testersFromWhatsapp/OverflowTest/GT1/GT1.vm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testVM/lt.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testVM/lt1.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="686">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testersFromWhatsapp/OverflowTest/AllTogether/AllTogether.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="18" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testVM/baseRam.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StackArithmetic/StackTest/StackTest.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="3" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StackArithmetic/StackTest/StackTest.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="145" column="5" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/ProgramFlow/FibonacciSeries/FibonacciSeries.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2689">
+          <caret line="123" column="3" lean-forward="true" selection-start-line="123" selection-start-column="3" selection-end-line="123" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/ProgramFlow/BasicLoop/BasicLoop.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/ProgramFlow/BasicLoop/BasicLoop.cmp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/ProgramFlow/BasicLoop/BasicLoop.asm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/FunctionCalls/NestedCall/NestedCallVME.tst">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/FunctionCalls/FibonacciElement/Sys.vm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/FunctionCalls/NestedCall/Sys.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/FunctionCalls/StaticsTest/Class2.vm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/FunctionCalls/StaticsTest/Class1.vm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/FunctionCalls/SimpleFunction/SimpleFunction.vm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/ProgramFlow/FibonacciSeries/FibonacciSeries.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baseAssemblyCode/negCode">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baseAssemblyCode/ltCode">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-275" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testFiles/newTestFile.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">netscape</node>
+            <node x="" y="">FlowControlCommand</node>
+            <node x="" y="">ArithmeticBooleanCommand</node>
+            <node x="" y="">main</node>
+            <node x="" y="">toolbarButtonGraphics</node>
+            <node x="" y="">sun</node>
+            <node x="" y="">VmCommand</node>
+            <node x="" y="">Nand-7-Tests</node>
+            <node x="" y="">groovyjarjarasm</node>
+            <node x="" y="">java</node>
+            <node x="" y="">VmSyntaxException</node>
+            <node x="" y="">javax</node>
+            <node x="" y="">FunctionCommand</node>
+            <node x="" y="">images</node>
+            <node x="" y="">org</node>
+            <node x="" y="">VmToAssemblyFileWriter</node>
+            <node x="" y="">MemoryAccessCommand</node>
+            <node x="" y="">AssemblyBlock</node>
+            <node x="" y="">Parser</node>
+            <node x="" y="">jdk</node>
+            <node x="" y="">META-INF</node>
+            <node x="" y="">groovy</node>
+            <node x="" y="">groovyjarjarcommonscli</node>
+            <node x="" y="">groovyjarjarantlr</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="262.0" y="246.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testFiles/setRam.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testFiles/functionDeclare.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testFiles/functionCall.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testFiles/functionDeclare.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="3" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testFiles/functionCall.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/useful notes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="82" column="49" selection-start-line="82" selection-start-column="49" selection-end-line="82" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testFiles/testFile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/FunctionCalls/FibonacciElement/FibonacciElement.asm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/FunctionCalls/FibonacciElement/Main.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testFiles/testFile.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1490">
+          <caret line="82" column="3" lean-forward="true" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testersFromWhatsapp/OverflowTest/AllTogether/AllTogether.cmp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8/FunctionCalls/StaticsTest/StaticsTest.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1520">
+          <caret line="718" column="5" lean-forward="true" selection-start-line="718" selection-start-column="5" selection-end-line="718" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testFiles/testFile.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VMtranslator">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FunctionCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1423">
+          <caret line="103" column="5" lean-forward="true" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryAccessCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1937">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VmCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VmInit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="45" lean-forward="true" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VmSyntaxException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AssemblyBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VmToAssemblyFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2314">
+          <caret line="131" column="1" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FlowControlCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="92" column="16" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
+          <folding>
+            <element signature="e#2672#2673#0" expanded="true" />
+            <element signature="e#2714#2715#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ArithmeticBooleanCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="139" column="42" selection-start-line="139" selection-start-column="42" selection-end-line="139" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
