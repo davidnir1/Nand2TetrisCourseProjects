@@ -24,6 +24,7 @@ VMtranslator
 
 Remarks
 -------
+In this project we created a program which translates JACK Virtual Machine (VM) code into Assembly code.
 Explanation on how this program works:
 We have four classes which do the heavy-lifting:
 VmCommand - This class' objects each represent a single VM command such as "push argument 2", they have the
@@ -47,6 +48,6 @@ Execution:
 
 available commands:
     make - compiles everything and gives permissions
-    make tar - creates a tar named project7.tar from all of the assets in this project
+    make tar - creates a tar named project8.tar from all of the assets in this project
     make clean - removes all .class files created in compilation
 
