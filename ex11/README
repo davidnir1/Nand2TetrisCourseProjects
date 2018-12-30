@@ -24,7 +24,7 @@ SymbolTable.py
 
 Remarks
 -------
-This is the complete version of the Jack Compiler, this is an extension of project 11,
+This is the complete version of the Jack Compiler, this is an extension of project 10,
 where we implemented a tokenizer and a CompilationEngine which has the capabillity
 to compile JACK files into XML files.
 This version extended the JackAnalyzer and now allows compilation from JACK
@@ -35,5 +35,3 @@ for example, moving from XML to VM was very convenient and pretty much straight 
 To choose between VM, XML or BOTH, change the relevant field in the main method in JackAnalyzer.
 
 
-Real programmers can write assembly code in any language.     :-)
--- Larry Wall in    <8571@jpl-devvax.JPL.NASA.GOV> (quote from school terminal)
