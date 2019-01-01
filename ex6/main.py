@@ -237,16 +237,17 @@ def translate_jmp(jump):
 
 
 def get_binary_c_instruction(dest, comp, jmp):
-	"""
+	""" Translates a c instruction represented by the 3 parameters into a binary command and returns it.
 
 	Args:
-		dest:
-		comp:
-		jmp:
+		dest: The destination value
+		comp: The computation value
+		jmp: The jump value
 	Returns:
+		The binary version of given command
 
 	"""
-
+	
 	bin_dest = translate_dest(dest)
 	bin_comp = translate_comp(comp)
 	bin_jmp = translate_jmp(jmp)
@@ -279,12 +280,12 @@ def get_c_instruction(assembly_line):
 
 
 def get_binary_instruction(assembly_line):
-	"""
-
+	"""Returns the binary version of the given assembly instruction, according to the instruction's type.
+		
 	Args:
-		assembly_line:
+		assembly_line: The line in assembly code which we are translating
 	Returns:
-
+		Binary version of the given assembly line
 	"""
 
 	if assembly_line.startswith(A_INST_PREFIX):
@@ -293,12 +294,12 @@ def get_binary_instruction(assembly_line):
 
 
 def translate_assembly_to_binary(assembly_lines):
-	"""
+	"""Translates the given list of lines (in assembly) into a list of lines in binary.
 
 	Args:
-		assembly_lines:
+		assembly_lines: A list of assembly lines
 	Returns:
-
+		A list of binary lines
 	"""
 
 	binary_lines = []
@@ -309,12 +310,12 @@ def translate_assembly_to_binary(assembly_lines):
 
 
 def translate_lines(input_file_lines):
-	"""
+	"""Parses the given list of raw lines from the input file and returns a list of binary commands.
 
 	Args:
-		input_file_lines:
+		Input_file_lines: The raw lines from the input file
 	Returns:
-
+		List containing the binary version of the code in the given list
 	"""
 
 	# create an initialized symbol table (with the default symbols required)
@@ -327,13 +328,11 @@ def translate_lines(input_file_lines):
 
 
 def do_first_pass(input_file_lines, symbol_table):
-	"""
+	"""Updates the symbol table with all the labels in the file.
 
 	Args:
-		input_file_lines:
-		symbol_table:
-	Returns:
-
+		input_file_lines: List containing raw lines from the file
+		symbol_table: Dictionary containing symbols and their index
 	"""
 
 	memory_index = 0
@@ -345,11 +344,11 @@ def do_first_pass(input_file_lines, symbol_table):
 
 
 def do_second_pass(input_file_lines, symbol_table):
-	"""
+	"""Goes over each line in the given list of raw lines and returns the binary version of the code in these lines.
 
 	Args:
-		input_file_lines:
-		symbol_table:
+		input_file_lines: List of raw lines in the file
+		symbol_table: The symbol table accumulated so far
 	Returns:
 
 	"""
@@ -380,6 +379,11 @@ def write_output_file(input_file_path, output_file_lines):
 
 
 def translate_file(arg):
+	"""Translates the file in the given path, exits with error message and code if there is a problem
+	
+	Args: 
+		arg: The path to the file
+	"""
 	# check if the file indeed is a .asm file
 	if not arg.endswith(ASM_FILE_SUFFIX):
 		print(NOT_A_VALID_ASM_FILE.format(arg))
