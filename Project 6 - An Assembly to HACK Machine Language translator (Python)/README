@@ -1,0 +1,21 @@
+idan356, davidnir1
+===============================================================================
+Idan Gabay, ID 312415706, idan.gabay@mail.huji.ac.il
+David Nir, ID 203487293, david.nir1@mail.huji.ac.il
+===============================================================================
+
+                           Project 6 - An asm to hack assembler
+                           -----------------------
+
+
+Submitted Files
+---------------
+README - This file.
+main.py - The main file which does all the work
+Makefile - The make file for this project
+Assembler - The executable for this project
+
+Remarks
+-------
+In this project, we created a program which translates Assembly code into Machine language, according to the
+HACK platform specification.

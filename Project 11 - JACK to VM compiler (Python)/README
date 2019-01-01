@@ -1,0 +1,37 @@
+idan356, davidnir1
+===============================================================================
+Idan Gabay, ID 312415706, idan.gabay@mail.huji.ac.il
+David Nir, ID 203487293, david.nir1@mail.huji.ac.il
+===============================================================================
+
+                            Project 11 - Compiler
+                           -----------------------
+
+
+Submitted Files
+---------------
+README - This file.
+JackAnalyzer
+Makefile
+CompilationEngine.py
+JackAnalyzer.py
+JackTokenizer.py
+Token.py
+TokenTypes.py
+VMWriter.py
+Symbol.py
+SymbolTable.py
+
+Remarks
+-------
+This is the complete version of the Jack Compiler, this is an extension of project 10,
+where we implemented a tokenizer and a CompilationEngine which has the capabillity
+to compile JACK files into XML files.
+This version extended the JackAnalyzer and now allows compilation from JACK
+into VM, XML, or both of them at once.
+We tried to build it as modular as we can,
+so that in the future it would be easier to add support for new target languages,
+for example, moving from XML to VM was very convenient and pretty much straight forward.
+To choose between VM, XML or BOTH, change the relevant field in the main method in JackAnalyzer.
+
+

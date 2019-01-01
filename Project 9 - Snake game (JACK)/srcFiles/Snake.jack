@@ -1,0 +1,129 @@
+/** This class represents a single snake.
+    The snake has the ability to crawl and to check if it collide with a given coordinate. */
+class Snake {
+
+    field LinkedList body;  // Will hold snake's body
+    field int currentDirection;  // Will hold the current direction the snake should crawl to
+    field int left;  // Will hold the ASCII value of the left keyboard button
+    field int right;  // Will hold the ASCII value of the right keyboard button
+    field int up;  // Will hold the ASCII value of the up keyboard button
+    field int down;  // Will hold the ASCII value of the down keyboard button
+
+    /** Constructs a new snake with size of 1.
+        Snake will have only a head node with the given (x,y) coordinate,
+        and will start crawling in the given direction */
+    constructor Snake new(int x, int y, int direction) {
+        let body = LinkedList.new(x, y);
+        let currentDirection = direction;
+        let left = 130;
+        let up = 131;
+        let right = 132;
+        let down = 133;
+        return this;
+    }
+
+    /** This method returns true if the given (x,y) coordinate is touching snake's body */
+    method bool isTouching(int x, int y) {
+        return body.exists(x, y);
+    }
+
+    /** This method returns snake's body length */
+    method int getLength() {
+        return body.getLength();
+    }
+
+    /** This method gets (x,y) coordinate and change head position to be that coordinate */
+    method void add(int x, int y) {
+        var Node newHead;
+        let newHead = Node.new(x, y);
+        do body.add(newHead);
+        return;
+    }
+
+    /** This method resets the snake before a new game */
+    method void reset(int x, int y, int direction) {
+        do body.reset(x, y);
+        let currentDirection = direction;
+        return;
+    }
+
+    /** This method removes the last body part of the snake (the last tail pixel) */
+    method void removeTail() {
+        do body.removeTail();
+        return;
+    }
+
+    /** This method returns a LinkedList with all snake's coordinates */
+    method LinkedList getBody() {
+        return body;
+    }
+
+    /** This method returns snake's head */
+    method Node getHead() {
+        return body.getHead();
+    }
+
+    /** This method returns snake's tail */
+    method Node getTail() {
+        return body.getTail();
+    }
+
+    /** Update CurrentDirection field with a given direction */
+    method void setDirection(int direction) {
+        var boolean leftRight, rightLeft, upDown, downUp;
+        let leftRight = (currentDirection = left) & (direction = right);
+        let rightLeft = (currentDirection = right) & (direction = left);
+        let upDown = (currentDirection = up) & (direction = down);
+        let downUp = (currentDirection = down) & (direction = up);
+        if(leftRight | rightLeft | upDown | downUp) {
+            return;
+        }
+        let currentDirection = direction;
+        return;
+    }
+
+    /** Execute all operation the snake needs to do in a single round */
+    method void doSnakeStuff(boolean ateFood) {
+        // Add new head based on current direction
+        var Node head, tail;
+        let head = body.getHead();
+        if(currentDirection = up) {
+            do add((head.getX() - 1), head.getY());
+        }
+        if(currentDirection = down) {
+            do add((head.getX() + 1), head.getY());
+        }
+        if(currentDirection = right) {
+            do add(head.getX(), (head.getY() + 1));
+        }
+        if(currentDirection = left) {
+            do add(head.getX(), (head.getY() - 1));
+        }
+
+        // Clear last tail if the snake didn't eat int he current round
+        if(~ateFood) {
+            let tail = getTail();
+            do Drawer.clearCell(tail.getX(), tail.getY());
+            do removeTail();
+        }
+        return;
+    }
+
+    /** This method returns true if the snake collide his own body */
+    method boolean selfCollision() {
+        var Node head, temp;
+        let head = body.getHead();
+        if(head = null) {
+            return false;
+        }
+        let temp = head.getNext();
+        while(~(temp = null)) {
+            if((temp.getX() = head.getX()) & (temp.getY() = head.getY())) {
+                return true;
+            }
+            let temp = temp.getNext();
+        }
+        return false;
+    }
+
+}
