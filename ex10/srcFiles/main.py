@@ -1,2 +1,0 @@
-import JackAnalyzer
-JackAnalyzer.main()
