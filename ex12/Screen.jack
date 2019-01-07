@@ -1,0 +1,270 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Screen.jack
+
+/**
+ * A library of functions for displaying graphics on the screen.
+ * The Hack physical screen consists of 512 rows (indexed 0..511, top to bottom)
+ * of 256 pixels each (indexed 0..255, left to right). The top left pixel on 
+ * the screen is indexed (0,0).
+ */
+class Screen {
+
+	static Array screen; // this will give us direct access to the memory
+    static boolean currentColor; 
+	static Array shiftLeftValues; // this will help with quicker bit manipulation
+
+    /** Initializes the Screen. */
+    function void init() {
+		let screen = 16384; // set the starting address to the start of the SCREEN segment
+        let currentColor = true; // start with black color
+		// this array will hold the first 16 powers of 2, for quicker computations
+		let shiftLeftValues = Array.new(16);
+        do Screen.setShiftValues();
+		return;
+    }
+
+    /** Erases the entire screen. */
+    function void clearScreen() {
+        var int counter;
+        let counter = 0;
+		while (counter < 8192) { // run on the entire screen segment
+			let screen[counter] = false;
+			let counter = counter + 1;
+		}
+        return;
+    }
+
+    /** Sets the current color, to be used for all subsequent drawXXX commands.
+     *  Black is represented by true, white by false. */
+    function void setColor(boolean b) {
+        let currentColor = b;
+        return;
+    }
+
+    /** Draws the (x,y) pixel, using the current color. */
+    function void drawPixel(int x, int y) {
+		var int cell, helpVal;
+		let cell = (y*32)+(x/16); // get the relevant memory segment
+		// get a value which in binary only has the relevant bit = 1
+		// this is done by shifting left x%16 times
+		let helpVal = shiftLeftValues[x&15]; 
+		// actually manipulate the specific bit we need
+		if(currentColor){ // convert relevant bit to 1 since in helpVal the bit is 1
+			let screen[cell] = screen[cell] | helpVal; // blackens the pixel
+		}
+		else{ // convert relevant bit to 0 since in the negated helpVal the bit is 0
+			let screen[cell] = screen[cell] & (~helpVal); // whitens the pixel
+		}
+        return;
+    }
+
+    /** Draws a line from pixel (x1,y1) to pixel (x2,y2), using the current color. */
+    function void drawLine(int x1, int y1, int x2, int y2) {
+		var int helpVal;
+        // Illegal line coordinates 
+		if(Screen.illegalCoordiantes(x1,y1) | Screen.illegalCoordiantes(x2,y2)){
+			do Sys.error(8);
+		}
+		// make sure x1 stands for the left x coordinate
+        if(x1 > x2) { // swap the values
+			let helpVal = x1;
+			let x1 = x2;
+			let x2 = helpVal;
+			let helpVal = y1;
+			let y1=y2;
+			let y2=helpVal;
+        } 
+		// call the correct drawing function
+		if(x1=x2){
+			do Screen.drawVerticalLine(x1,y1,y2);
+		}
+		else{
+			if(y1=y2){
+				do Screen.drawHorizontalLine(x1,x2,y1);
+			}
+			else{
+				do Screen.drawDiagLine(x1,y1,x2,y2);
+			}
+		}
+        return;
+    }
+	
+	
+
+    /** Draws a filled rectangle whose top left corner is (x1, y1)
+     * and bottom right corner is (x2,y2), using the current color. */
+    function void drawRectangle(int x1, int y1, int x2, int y2) {
+		var int helpVal, top, bottom;
+        // Illegal rectangle coordinates
+        if(Screen.illegalCoordiantes(x1,y1) | Screen.illegalCoordiantes(x2,y2)|(~(x1<x2))|(~(y1<y2))){
+			do Sys.error(9);
+		}
+		let helpVal = y1;
+		while(~(helpVal>y2)){
+			do Screen.drawHorizontalLine(x1,x2,helpVal);
+			let helpVal = helpVal +1 ;
+		}
+        return;
+    }
+
+	
+
+    /** Draws a filled circle of radius r<=181 around (x,y), using the current color. */
+    function void drawCircle(int x, int y, int r) {
+		var int dx, dy, r_squared;
+		// Illegal radius
+        if((r < 0) | (r > 181)) {
+            do Sys.error(13);
+        }
+        // Illegal center coordinates/radius combo
+        if(Screen.illegalCenterCoords(x,y,r)){
+			do Sys.error(12);
+		}
+		let dy = -r;
+		let r_squared = r*r;
+		while(~(dy>r)){
+			let dx = Math.sqrt(r_squared-(dy*dy)); // get length of current line
+			do Screen.drawHorizontalLine(x-dx,x+dx,y+dy); // draw line from x-r to x+r in height y
+			let dy = dy+1;
+		}
+        return;
+    }
+	
+	/* =============================== Non OS-API Functions ========================== */
+	
+	/* Verifies that the given coordinates and radius are legal for a circle. */
+	function boolean illegalCenterCoords(int x, int y, int r){
+		var boolean badX,badY;
+		let badX = (x+r>511) | (x-r<0);
+		let badY = (y+r>255) | (y-r<0);
+		return (badX|badY);
+	}
+	
+	/* returns true if given coordinates are illegal (out of bounds) */
+	function boolean illegalCoordiantes(int x, int y){
+		var boolean illegalX,illegalY;
+		let illegalX = (x<0) | (511<x);
+		let illegalY = (y<0) | (255<y);
+		return (illegalX|illegalY);		
+	}
+	
+	/* Draws a vertical line based on given coordinates */
+	function void drawVerticalLine(int x,int bottomY,int topY){
+		var int helpVal;
+		// make sure bottomY is lower than topY
+		if(bottomY>topY){ // swap the values
+			let helpVal = bottomY;
+			let bottomY = topY;
+			let topY = helpVal;
+		}
+		// draw each pixel until we reach topY
+		while(~(bottomY>topY)){
+			do Screen.drawPixel(x,bottomY);
+			let bottomY = bottomY+1;
+		}
+		return;		
+	}
+	
+	/* Draws a horizontal line based on given coordinates (assuming leftX <= rightX) */
+	function void drawHorizontalLine(int leftX,int rightX,int y){
+		var int curLeft,howMuchLeft, helpVal;
+		let curLeft = leftX;
+		let helpVal = leftX&15;
+		let howMuchLeft = 16-helpVal;
+		if(helpVal>0){ // draw the left sub-segmented line
+			do Screen.drawHorizontalLineByPixel(leftX,leftX+howMuchLeft, y);
+			let curLeft = curLeft + howMuchLeft; // get to start of new segment's x
+		}
+		let helpVal = (curLeft/16)+(y*32); // gets us the start of the first complete seg
+		while(curLeft+16<rightX){ // draw complete segments (it works faster than drawing pixels)
+			do Screen.fillSegment(helpVal);
+			let helpVal = helpVal+1;
+			let curLeft = curLeft+16;
+		}
+		if(curLeft < rightX){ // draw the right sub-segmented line
+			do Screen.drawHorizontalLineByPixel(curLeft,rightX,y);
+		}
+		return;	
+	}
+	
+	/* Fills a complete segment in the given segNumber based on the current color */
+	function void fillSegment(int segNumber){
+		if(currentColor){
+			let screen[segNumber] = ~0;
+		}
+		else{
+			let screen[segNumber] = 0;
+		}
+		return;
+	}
+	
+	/* Draws a line between leftX and rightX pixel by pixel */
+	function void drawHorizontalLineByPixel(int leftX, int rightX, int y){
+		while(~(leftX>rightX)){
+			do Screen.drawPixel(leftX,y);
+			let leftX = leftX+1;
+		}
+		return;
+	}
+	
+	/* Draws a diagonal line based on given inputs, using the algorithm described in course book. */
+	function void drawDiagLine(int leftX,int leftY,int rightX,int rightY){
+		// assuming leftX < rightX
+		var int newdx,newdy, dx, dy, relevantdy, newdyMinusnewdx, yPlus;
+		var boolean negDy;
+		let dx = rightX-leftX;
+		let dy = rightY-leftY;
+		let newdx=0;
+		let newdy=0;
+		let newdyMinusnewdx=0;
+		
+		if(dy<0){ // if our line descends
+			let yPlus = -1;
+			let negDy = true;
+			let relevantdy = -dy;
+		}
+		else{ // if our line ascends
+			let yPlus = 1;
+			let negDy = false;
+			let relevantdy = dy;
+		}
+		// while (we can still move left) and ((need to go down and can go down) or (need to go up and can go up))
+		while ((~(newdx>dx)) & ((negDy & (~(newdy<dy))) | ((~negDy) & (~(newdy>dy))))){
+			do Screen.drawPixel(leftX+newdx,leftY+newdy);
+			if (newdyMinusnewdx < 0){ // if we are overshooting
+				let newdx = newdx+1;
+				let newdyMinusnewdx = newdyMinusnewdx + relevantdy;
+			}
+			else{ // if we are undershooting
+				let newdy = newdy+yPlus;
+				let newdyMinusnewdx = newdyMinusnewdx - dx;
+			}
+		}
+		return;		
+	}
+	
+	/** Set shiftLeftValues[i] to 2^i. */
+	function void setShiftValues(){
+		let shiftLeftValues[0] = 1;
+		let shiftLeftValues[1] = 2;
+		let shiftLeftValues[2] = 4;
+		let shiftLeftValues[3] = 8;
+		let shiftLeftValues[4] = 16;
+		let shiftLeftValues[5] = 32;
+		let shiftLeftValues[6] = 64;
+		let shiftLeftValues[7] = 128;
+		let shiftLeftValues[8] = 256;
+		let shiftLeftValues[9] = 512;
+		let shiftLeftValues[10] = 1024;
+		let shiftLeftValues[11] = 2048;
+		let shiftLeftValues[12] = 4096;
+		let shiftLeftValues[13] = 8192;
+		let shiftLeftValues[14] = 16384;
+		let shiftLeftValues[15] = 16384 + 16384; // since explicit 32768 is a problematic value
+		return;
+	}
+}
+
+

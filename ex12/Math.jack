@@ -1,0 +1,161 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Math.jack
+
+/**
+ * A library of commonly used mathematical functions.
+ * Note: Jack compilers implement multiplication and division using OS method calls.
+ */
+class Math {
+
+	static Array shiftLeftValues; // this will let us get the 16 shift left values immediately (for efficiency)
+    static int outputY2;
+
+    /** Initializes the library. */
+    function void init() {
+		let shiftLeftValues = Array.new(16);
+		do Math.setShiftValues();
+        return;
+    }
+	
+	function void setShiftValues(){
+		let shiftLeftValues[0] = 1;
+		let shiftLeftValues[1] = 2;
+		let shiftLeftValues[2] = 4;
+		let shiftLeftValues[3] = 8;
+		let shiftLeftValues[4] = 16;
+		let shiftLeftValues[5] = 32;
+		let shiftLeftValues[6] = 64;
+		let shiftLeftValues[7] = 128;
+		let shiftLeftValues[8] = 256;
+		let shiftLeftValues[9] = 512;
+		let shiftLeftValues[10] = 1024;
+		let shiftLeftValues[11] = 2048;
+		let shiftLeftValues[12] = 4096;
+		let shiftLeftValues[13] = 8192;
+		let shiftLeftValues[14] = 16384;
+		let shiftLeftValues[15] = 16384 + 16384;
+		return;
+	}
+
+	// ============= helper func ===============
+	// this func shifts left the number 2 by given times (effectively returns 2^times)
+	function int shift_two_left(int times){
+		return shiftLeftValues[times];	
+	}
+	
+	
+    /** Returns the absolute value of x. */
+    function int abs(int x) {
+		if(x < 0) {
+			return -x;
+		}
+		return x;
+    }
+
+    /** Returns the product of x and y. 
+     *  When a Jack compiler detects the multiplication operator '*' in the 
+     *  program's code, it handles it by invoking this method. In other words,
+     *  the Jack expressions x*y and multiply(x,y) return the same value.
+     */
+    function int multiply(int x, int y) {
+		var int product, shiftedX, digit, andProduct;
+		let product = 0;
+		let shiftedX = x;
+		let digit = 0;
+		while(digit < 16){ // since we go by each digit in 16 bit numbers
+			// this checks if the current digit in the binary version of y is 1,
+			// if so, we want to add it to the sum
+			let andProduct = y & shiftLeftValues[digit];
+			if ( ~(andProduct = 0) ) {
+				let product = product + shiftedX;
+			}
+			let shiftedX = shiftedX + shiftedX; // this is equal to shifting x left
+			let digit = digit + 1;
+		}
+		return product;
+    }
+
+    /** Returns the integer part of x/y.
+     *  When a Jack compiler detects the multiplication operator '/' in the 
+     *  program's code, it handles it by invoking this method. In other words,
+     *  the Jack expressions x/y and divide(x,y) return the same value.
+     */
+    function int divide(int x, int y) {
+		var int result, helpVal;
+		var boolean resultIsNegative;
+		let outputY2 = 0;
+        // Division by zero
+        if(y = 0) {
+            do Sys.error(3);
+        }
+		let resultIsNegative = false;
+		if (x < 0){
+			let x = -x;
+			let resultIsNegative = ~resultIsNegative;
+		}
+		if (y < 0){
+			let y = -y;
+			let resultIsNegative = ~resultIsNegative;
+		}
+		if (y > x){
+			return 0;
+		}
+		let result = Math.divide_helper(x, y);
+		if (resultIsNegative){
+			return -result;
+		}
+		return result;
+    }
+
+    function int divide_helper(int x, int y) {
+		var int output;
+		if ((y > x) | (y < 0)) {
+			return 0;
+		}
+		let output = Math.divide_helper(x, y + y);
+		let output = output + output;
+		if( (x - outputY2) < y ) {
+			return output;
+		}
+		let outputY2 = outputY2 + y; // Update global var
+		return output + 1;
+    }
+
+    /** Returns the integer part of the square root of x. */
+    function int sqrt(int x) {
+	    var int y, counter, possible_sqrt, squared_possible_sqrt;
+        // Cannot compute square root of a negative number
+        if(x < 0) {
+            do Sys.error(4);
+        }
+        let y = 0;
+        let counter = 7;
+        while( ~(counter < 0) ) {
+            let possible_sqrt = y + shiftLeftValues[counter];
+            let squared_possible_sqrt = possible_sqrt * possible_sqrt;
+            if( ~(squared_possible_sqrt > x) & (squared_possible_sqrt > 0) ) {
+                let y = possible_sqrt;
+            }
+            let counter = counter - 1;
+        }
+        return y;
+    }
+
+    /** Returns the greater number. */
+    function int max(int a, int b) {
+        if( a > b ) {
+            return a;
+        }
+        return b;
+    }
+
+    /** Returns the smaller number. */
+    function int min(int a, int b) {
+        if( a < b ) {
+            return a;
+        }
+        return b;
+    }
+}
