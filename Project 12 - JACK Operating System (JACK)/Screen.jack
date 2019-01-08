@@ -128,7 +128,6 @@ class Screen {
 			let dx = Math.sqrt(r_squared-(dy*dy)); // get length of current line
 			let help1 = x-dx;
 			let help2 = x+dx;
-			//do Screen.drawHorizontalLine(x-dx,x+dx,y+dy); // draw line from x-r to x+r in height y
 			do Screen.drawHorizontalLine(help1,help2,y+dy); // draw line from x-r to x+r in height y
 			do Screen.drawHorizontalLine(help1,help2,y-dy); // draw line from x-r to x+r in height y
 			let dy = dy-1;
@@ -174,7 +173,7 @@ class Screen {
 	/* Draws a horizontal line based on given coordinates (assuming leftX <= rightX) */
 	function void drawHorizontalLine(int leftX,int rightX,int y){
 		var int curLeft,howMuchLeft, helpVal, loopStopper;
-		if((leftX+15)>rightX){
+		if((leftX+15)>rightX){ // in case we have two x's which are in the same memory segment
 			do Screen.drawHorizontalLineByPixel(leftX,rightX,y);
 			return;
 		}
