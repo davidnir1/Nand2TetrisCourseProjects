@@ -113,7 +113,7 @@ class Screen {
 
     /** Draws a filled circle of radius r<=181 around (x,y), using the current color. */
     function void drawCircle(int x, int y, int r) {
-		var int dx, dy, r_squared;
+		var int dx, dy, r_squared, help1,help2;
 		// Illegal radius
         if((r < 0) | (r > 181)) {
             do Sys.error(13);
@@ -122,12 +122,16 @@ class Screen {
         if(Screen.illegalCenterCoords(x,y,r)){
 			do Sys.error(12);
 		}
-		let dy = -r;
+		let dy = r;
 		let r_squared = r*r;
-		while(~(dy>r)){
+		while(~(dy<0)){
 			let dx = Math.sqrt(r_squared-(dy*dy)); // get length of current line
-			do Screen.drawHorizontalLine(x-dx,x+dx,y+dy); // draw line from x-r to x+r in height y
-			let dy = dy+1;
+			let help1 = x-dx;
+			let help2 = x+dx;
+			//do Screen.drawHorizontalLine(x-dx,x+dx,y+dy); // draw line from x-r to x+r in height y
+			do Screen.drawHorizontalLine(help1,help2,y+dy); // draw line from x-r to x+r in height y
+			do Screen.drawHorizontalLine(help1,help2,y-dy); // draw line from x-r to x+r in height y
+			let dy = dy-1;
 		}
         return;
     }
@@ -169,16 +173,21 @@ class Screen {
 	
 	/* Draws a horizontal line based on given coordinates (assuming leftX <= rightX) */
 	function void drawHorizontalLine(int leftX,int rightX,int y){
-		var int curLeft,howMuchLeft, helpVal;
+		var int curLeft,howMuchLeft, helpVal, loopStopper;
+		if((leftX+15)>rightX){
+			do Screen.drawHorizontalLineByPixel(leftX,rightX,y);
+			return;
+		}
 		let curLeft = leftX;
 		let helpVal = leftX&15;
 		let howMuchLeft = 16-helpVal;
-		if(helpVal>0){ // draw the left sub-segmented line
+		if((helpVal>0)){ // draw the left sub-segmented line
 			do Screen.drawHorizontalLineByPixel(leftX,leftX+howMuchLeft, y);
 			let curLeft = curLeft + howMuchLeft; // get to start of new segment's x
 		}
 		let helpVal = (curLeft/16)+(y*32); // gets us the start of the first complete seg
-		while(curLeft+16<rightX){ // draw complete segments (it works faster than drawing pixels)
+		let loopStopper = rightX-16;
+		while(curLeft<loopStopper){ // draw complete segments (it works faster than drawing pixels)
 			do Screen.fillSegment(helpVal);
 			let helpVal = helpVal+1;
 			let curLeft = curLeft+16;
