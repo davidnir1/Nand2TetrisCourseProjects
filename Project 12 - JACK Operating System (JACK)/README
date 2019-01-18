@@ -24,5 +24,6 @@ Remarks:
 In this project we implemented 8 classes which are responsible for critical operations which are built in (built in as of now) in the JACK  
 language.
 These classes are reposnsible for allowing memory manipulation, receiving inputs, screen manipulation etc.
-These classes are implemented in the JACK language and wherever possible we implemented code which is as efficient as we can, as these  
+These classes are implemented in the JACK language and wherever possible we implemented code which is as efficient as we can (this is
+why there are some cases where there is heavy code repetition, this is done to minimize function calls which hurt efficiency), as these  
 basic operations tend to slow programs down significantly if they are not implemented extremely efficiently.
