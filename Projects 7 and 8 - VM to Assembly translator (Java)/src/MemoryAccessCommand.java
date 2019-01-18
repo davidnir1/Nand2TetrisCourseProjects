@@ -8,17 +8,33 @@ import java.util.HashMap;
  */
 public class MemoryAccessCommand extends VmCommand {
 
-	private static final String SPACE_CHAR = " ";
-	private static final String PUSH_PREFIX = "push";
+	// Error messages
 	private static final String BAD_SYNTAX_PROBLEM = "Bad syntax - could not create an assembly block for ";
 	private static final String BAD_SYNTAX_CONSTANT_POP = "Bad Syntax - popping into constant ";
 	private static final String ERR_UNKNOWN_MEMORY_SEGMENT = "Unknown memory segment: ";
 	private static final String BAD_SYNTAX = "Bad syntax: ";
+	// General constants
+	private static final String SPACE_CHAR = " ";
+	private static final String PUSH_PREFIX = "push";
 	private static final int DEST_INDEX = 1;
 	private static final int DATA_INDEX = 2;
 	private static final int CORRECT_NUM_OF_COMPONENTS = 3;
 	private static final String NEWLINE = "\n";
+	// Special destinations
+	private static final String POINTER_DEST = "pointer";
+	private static final String TEMP_DEST = "temp";
+	private static final String CONST_DEST = "constant";
+	private static final String STATIC_DEST = "static";
+	// Constant assembly commands
 	private static final String PUSH_OUT_SUFFIX = "@SP\t// SP=D\nA=M\nM=D\n@SP\t//SP++\nM=M+1\n";
+	private static final String A_INST_SUFF = "@";
+	private static final String ASSIGN_D_FROM_MEM = "D=M\n";
+	private static final String ASSIGN_D_FROM_CONST = "D=A\n";
+	private static final String INC_D_BY_CONST = "D=D+A\n";
+	private static final String ASSIGN_D_FROM_A_ADDRESS = "A=D\nD=M\n";
+	private static final String DECREMENT_STACK_POINTER = "@SP\t// SP--\nM=M-1\n@";
+	private static final String ASSIGN_R13_FROM_D = "@R13\nM=D\n";
+	private static final String COPY_STACK_TOP_INTO_ADDRESS_STORED_IN_R13 = "A=M\nD=M\n@R13\nA=M\nM=D\n";
 
 	// We define enums for the types to support any future command types we might add
 	private enum CommandType {
@@ -28,9 +44,8 @@ public class MemoryAccessCommand extends VmCommand {
 
 	// This map is shared by all objects in this class, and is used to translate destinations into usable
 	// pointers, so that it's easier and faster to write Assembly code.
-	// This map is also initiated statically to conserve memory.
+	// This map is also initiated statically to conserve memory and shorten run time.
 	private static HashMap<String, String> destinationMap;
-
 	static {
 		destinationMap = new HashMap<>();
 		destinationMap.put("local", "LCL");
@@ -113,59 +128,62 @@ public class MemoryAccessCommand extends VmCommand {
 	 */
 	private String getPushCode(String dest, String data) throws VmSyntaxException {
 		String ptr;
-		String output = "@";
-		boolean isPointer = !(dest.equals("pointer") || dest.equals("temp"));
+		String output = A_INST_SUFF;
+		boolean isPointer = !(dest.equals(POINTER_DEST) || dest.equals(TEMP_DEST));
 		// prepare the value in dest to copy into the stack
-		if (dest.equals("constant")) {
+		if (dest.equals(CONST_DEST)) {
 			output += data + " // D=" + data + "\n";
-			output += "D=A\n";
+			output += ASSIGN_D_FROM_CONST;
 		} else {
-			if (dest.equals("static")) {
+			if (dest.equals(STATIC_DEST)) {
 				ptr = getStaticFileName() + "." + data;
 				output += ptr + "\t//D=" + ptr + "\n";
-				output += "D=M\n";
+				output += ASSIGN_D_FROM_MEM;
 			} else {
 				ptr = destinationMap.get(dest);
 				if (ptr == null)
 					throw new VmSyntaxException(ERR_UNKNOWN_MEMORY_SEGMENT + this.dest);
 				output += ptr + " // D=" + ptr + "+" + data + "\n";
-				output += isPointer ? "D=M\n" : "D=A\n";
-				output += "@" + data + "\n";
-				output += "D=D+A\n";
-				output += "A=D\nD=M\n";
+				output += isPointer ? ASSIGN_D_FROM_MEM : ASSIGN_D_FROM_CONST;
+				output += A_INST_SUFF + data + "\n";
+				output += INC_D_BY_CONST;
+				output += ASSIGN_D_FROM_A_ADDRESS;
 			}
 		}
 		output += PUSH_OUT_SUFFIX;
 		return output;
 	}
 
-
+	/*
+	 * Method which receives a destination and data input and generates Assembly code which translates into
+	 * a pop command.
+	 */
 	private String getPopCode(String dest, String index) throws VmSyntaxException {
 		String ptr;
 		// sp --
-		String output = "@SP\t// SP--\nM=M-1\n@";
-		boolean isPointer = !(dest.equals("pointer") || dest.equals("temp"));
+		String output = DECREMENT_STACK_POINTER;
+		boolean isPointer = !(dest.equals(POINTER_DEST) || dest.equals(TEMP_DEST));
 		// throw an exception since this is not an allowed command
-		if (dest.equals("constant"))
-			throw new VmSyntaxException(BAD_SYNTAX_CONSTANT_POP + this.line + "\n");
+		if (dest.equals(CONST_DEST))
+			throw new VmSyntaxException(BAD_SYNTAX_CONSTANT_POP + this.line + NEWLINE);
 			// put the address of dest in R13 to prepare for copying from the stack
 		else {
-			if (dest.equals("static")) {
+			if (dest.equals(STATIC_DEST)) {
 				ptr = getStaticFileName() + "." + data;
 				output += ptr + "\t//D=" + ptr + "\n";
-				output += "D=A\n";
-				output += "@R13\nM=D\n";
+				output += ASSIGN_D_FROM_CONST;
+				output += ASSIGN_R13_FROM_D;
 			} else {
 				ptr = destinationMap.get(dest);
 				if (ptr == null)
 					throw new VmSyntaxException(ERR_UNKNOWN_MEMORY_SEGMENT + this.dest);
 				output += ptr + "\t// R13=" + ptr + "+" + index + "\n";
-				output += (isPointer) ? "D=M" : "D=A";
-				output += "\n@" + index + "\nD=D+A\n@R13\nM=D\n";
+				output += (isPointer) ? ASSIGN_D_FROM_MEM : ASSIGN_D_FROM_CONST;
+				output += A_INST_SUFF + index + "\n"+INC_D_BY_CONST+ASSIGN_R13_FROM_D;
 			}
 		}
-		// actually copy the value into our destination
-		output += "@SP\t//" + ptr + "=SP\nA=M\nD=M\n@R13\nA=M\nM=D\n";
+		// actually copy the value into our destination (the destination's address is stored inside R13)
+		output += "@SP\t//" + ptr + "=SP\n"+ COPY_STACK_TOP_INTO_ADDRESS_STORED_IN_R13;
 		return output;
 	}
 }

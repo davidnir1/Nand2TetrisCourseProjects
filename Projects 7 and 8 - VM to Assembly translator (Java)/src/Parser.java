@@ -7,12 +7,12 @@ import java.util.ArrayList;
  */
 public class Parser {
 
+	private static final int NOT_FOUND_INDEX = -1;
+	private static final String COMMENT_PREFIX = "//";
 	private static final int ERROR_CODE = -1;
 	private static final String ERR_READER_CLOSE = "Error closing file reader";
-	private static final String COMMENT_PREFIX = "//";
 	private static final String SYNTAX_ERROR_UNKNOWN_COMMAND = "Syntax error: unknown command ";
 	private static final String ERR_READ_FILE = "ERROR: problem while reading from file ";
-	private static final int NOT_FOUND_INDEX = -1;
 	private static final String BUFFERED_READER_ERR = "ERROR: problem with buffered reader";
 
 	private FileReader fileReader;
