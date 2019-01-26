@@ -14,7 +14,7 @@ CHIP HalfAdder {
 
     PARTS:
 	
-	//Optimal
+	// Optimal
 	Nand(a=a,b=b,out=nand1);
 	Nand(a=a,b=nand1,out=nandTop);
 	Nand(a=nand1,b=b,out=nandMid);
@@ -22,7 +22,7 @@ CHIP HalfAdder {
 	Nand(a=nand1,b=nand1,out=carry);
 	
 	
-	//Our implementation
+	// Secondary implementation
 	//Xor(a=a,b=b,out=sum);
 	//And(a=a,b=b,out=carry);
 }

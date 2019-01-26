@@ -15,6 +15,7 @@ CHIP And {
 
     PARTS:
     Nand(a=a,b=b,out=c);
+	// negate the result (not(nand) = and)
     Nand(a=c,b=c,out=out);
 
 }

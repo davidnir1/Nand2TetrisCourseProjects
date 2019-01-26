@@ -21,7 +21,7 @@ CHIP Mux {
 	Nand(a=sel,b=b,out=bNandout);
 	Nand(a=aNandout,b=bNandout,out=out);
 	
-	// Our implementation
+	// Secondary implementation
 	//Nand(a=a,b=notSel,out=aNandout);
 	//Not(in=sel,out=notSel);
 	//Nand(a=sel,b=b,out=bNandout);

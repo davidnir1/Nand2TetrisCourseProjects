@@ -21,7 +21,7 @@ CHIP DMux {
 	Nand(a=in,b=nandOut,out=notA);
 	Nand(a=notA,b=notA,out=a);
 	
-	// Our implementation
+	// Secondary implementation
 	//And(a=in,b=nandOut,out=a);
 	//Nand(a=in,b=sel,out=nandOut);
 	//Not(in=nandOut,out=b);
