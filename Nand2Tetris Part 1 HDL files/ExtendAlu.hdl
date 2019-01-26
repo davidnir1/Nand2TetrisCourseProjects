@@ -1,0 +1,64 @@
+/**
+* The input of the extends ALU is instruction[9] and x[16],y[16].
+* the output is define as follows:
+* If instruction[7..8] equals 1 the the output is exactly as the ALU.
+* Where instruction[5]=zx,instruction[4]=nx,...,instruction[0]=no.
+* If instruction[7] equals 0 the output will be x*y and disregard the rest 
+* of the instruction.
+*
+* If instruction[8] equals 0 the output will be shift.
+* Then, if instruction[4] equals 0 it will return shift of y otherwise shift 
+* of x, moreover if instruction[5] equals 0 it will return shift right 
+* otherwise shift left.
+**/
+CHIP ExtendAlu{
+     IN x[16],y[16],instruction[9];
+     OUT out[16],zr,ng;
+		
+     PARTS:
+		// zero the x input?
+		Mux16(a=x ,b=false ,sel=instruction[5] ,out=x1 );
+	
+		// negate the x input?
+		Not16(in=x1 ,out=Notx );
+		Mux16(a=x1 ,b=Notx ,sel=instruction[4] ,out=x2 );
+	
+		// zero the y input?
+		Mux16(a=y ,b=false ,sel=instruction[3] ,out=y1 );
+	
+		// negate the y input?
+		Not16(in=y1 ,out=Noty );
+		Mux16(a=y1 ,b=Noty ,sel=instruction[2] ,out=y2 );
+	
+		// compute out = x + y (if 1) or x & y (if 0)
+		Add16(a=x2 ,b=y2 ,out=XPlusY );
+		And16(a=x2 ,b=y2 ,out=XAndY );
+		Mux16(a=XAndY ,b=XPlusY ,sel=instruction[1] ,out=out1 );
+	
+		// negate the out output?
+		Not16(in=out1 ,out=NotOut1 );
+		Mux16(a=out1 ,b=NotOut1 ,sel=instruction[0] ,out=regularALUOut);
+
+		// If instruction[8] equals 0 the output will be shift. 
+		// Then, if instruction[4] equals 0 it will return shift of y, otherwise shift of x, 
+		// moreover if instruction[5] equals 0 it will return shift right, otherwise shift left.
+		Mux16(a=y ,b=x ,sel=instruction[4] ,out=shiftArg );
+		ShiftLeft(in=shiftArg , out=leftShifted );
+		ShiftRight(in=shiftArg , out=rightShifted );
+		Mux16(a=rightShifted ,b=leftShifted ,sel=instruction[5] ,out=shiftedArg );
+		Mux16(a=shiftedArg ,b=regularALUOut ,sel=instruction[8] ,out=shiftedOut );
+		
+		// If instruction[7] equals 0 the output will be x*y and disregard the rest of the instruction.
+		Mul(a=x, b=y, out=xMuly);
+		Mux16(a=xMuly ,b=shiftedOut ,sel=instruction[7] ,out=out , out[15]=MSBout, out[0..7]=outFirstHalf, out[8..15]=outSecondHalf);
+		
+		// 1 if (out < 0),  0 otherwise
+		And(a=true, b=MSBout, out=ng );
+	
+		// 1 if (out == 0), 0 otherwise
+		Or8Way(in=outFirstHalf ,out=or1 );
+		Or8Way(in=outSecondHalf ,out=or2 );
+		Or(a=or1 ,b=or2 ,out=IsZero );
+		Not( in=IsZero, out=zr );
+		
+}

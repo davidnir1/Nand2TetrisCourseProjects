@@ -1,0 +1,67 @@
+CHIP Mul{
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+	//compute all of the shifted a * b[i] products
+	Mux16(a=false,b=a,sel=b[0],out=product0);
+	Mux16(a=false,b=shiftBy1,sel=b[1],out=product1);
+	Mux16(a=false,b=shiftBy2,sel=b[2],out=product2);
+	Mux16(a=false,b=shiftBy3,sel=b[3],out=product3);
+	Mux16(a=false,b=shiftBy4,sel=b[4],out=product4);
+	Mux16(a=false,b=shiftBy5,sel=b[5],out=product5);
+	Mux16(a=false,b=shiftBy6,sel=b[6],out=product6);
+	Mux16(a=false,b=shiftBy7,sel=b[7],out=product7);
+	Mux16(a=false,b=shiftBy8,sel=b[8],out=product8);
+	Mux16(a=false,b=shiftBy9,sel=b[9],out=product9);
+	Mux16(a=false,b=shiftBy10,sel=b[10],out=product10);
+	Mux16(a=false,b=shiftBy11,sel=b[11],out=product11);
+	Mux16(a=false,b=shiftBy12,sel=b[12],out=product12);
+	Mux16(a=false,b=shiftBy13,sel=b[13],out=product13);
+	Mux16(a=false,b=shiftBy14,sel=b[14],out=product14);
+	Mux16(a=false,b=shiftBy15,sel=b[15],out=product15);
+
+
+	//shift everything left by <digit index>
+	ShiftLeft(in=a,out=shiftBy1);
+	ShiftLeft(in=shiftBy1,out=shiftBy2);
+	ShiftLeft(in=shiftBy2,out=shiftBy3);
+	ShiftLeft(in=shiftBy3,out=shiftBy4);
+	ShiftLeft(in=shiftBy4,out=shiftBy5);
+	ShiftLeft(in=shiftBy5,out=shiftBy6);
+	ShiftLeft(in=shiftBy6,out=shiftBy7);
+	ShiftLeft(in=shiftBy7,out=shiftBy8);
+	ShiftLeft(in=shiftBy8,out=shiftBy9);
+	ShiftLeft(in=shiftBy9,out=shiftBy10);
+	ShiftLeft(in=shiftBy10,out=shiftBy11);
+	ShiftLeft(in=shiftBy11,out=shiftBy12);
+	ShiftLeft(in=shiftBy12,out=shiftBy13);
+	ShiftLeft(in=shiftBy13,out=shiftBy14);
+	ShiftLeft(in=shiftBy14,out=shiftBy15);
+
+
+
+	//sum everything
+	
+	Add16(a=product1,b=product0,out=sum1);
+	Add16(a=product2,b=sum1,out=sum2);
+	Add16(a=product3,b=sum2,out=sum3);
+	Add16(a=product4,b=sum3,out=sum4);
+	Add16(a=product5,b=sum4,out=sum5);
+	Add16(a=product6,b=sum5,out=sum6);
+	Add16(a=product7,b=sum6,out=sum7);
+	Add16(a=product8,b=sum7,out=sum8);
+	Add16(a=product9,b=sum8,out=sum9);
+	Add16(a=product10,b=sum9,out=sum10);
+	Add16(a=product11,b=sum10,out=sum11);
+	Add16(a=product12,b=sum11,out=sum12);
+	Add16(a=product13,b=sum12,out=sum13);
+	Add16(a=product14,b=sum13,out=sum14);
+	Add16(a=product15,b=sum14,out=out);
+
+
+	
+	
+	
+	
+}
