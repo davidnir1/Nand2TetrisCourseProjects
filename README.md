@@ -1,6 +1,5 @@
 # Nand2TetrisCourseProjects
-This is a repository which will hold the projects from the second part of the course, and the chip implementations from the first part.  
-This repository holds projects 6-12 (the first 5 projects belong to the first part of the course).  
+This is a repository which holds projects from the Nand2Tetris course.  
 In the first part of the course we built the HACK computer platform - a 16 bit computer, from the first NAND gates all the
 way up to the actual CPU, RAM, etc.  
 
@@ -8,7 +7,10 @@ In the second part of the course we built a compiler which compiles JACK code (a
 the course, which is similar to Java) into (eventually) HACK machine language.  
 We built the compiler using Python and Java as our main tools.  
 
-What we built in this course (ordered from the highest level to the lowest):
+
+This repository holds all of our chip implementations (which together make the HACK platform) and projects 6-12 (which together make the JACK compiler, VM to Assembly translator and the Assembler).  
+
+What we built in this second part of the course (ordered from the highest level to the lowest):
     
   Crucial implementations of JACK operating system classes (project 12):
     Here we implemented a few extremely efficient classes which provide the very basic operations required by a JACK programmer, such as:
