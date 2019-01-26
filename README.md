@@ -1,5 +1,5 @@
 # Nand2TetrisCourseProjects
-This is a repository which will hold the projects from the second part of the Nand2Tetris course.  
+This is a repository which will hold the projects from the second part of the course, and the chip implementations from the first part.  
 This repository holds projects 6-12 (the first 5 projects belong to the first part of the course).  
 In the first part of the course we built the HACK computer platform - a 16 bit computer, from the first NAND gates all the
 way up to the actual CPU, RAM, etc.  
